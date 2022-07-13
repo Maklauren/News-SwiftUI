@@ -14,7 +14,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(networkManager.posts) { post in
+                NavigationLink {
+                    DetailView(url: post.story_url)
+                } label: {
                     Text(post.story_title ?? "")
+                }
             }
             .navigationTitle("H4K0R News")
         }
